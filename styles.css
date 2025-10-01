@@ -1,0 +1,73 @@
+/* Basic, modern, responsive styling */
+:root{
+  --bg:#0b0d10;
+  --card:#12161b;
+  --muted:#8a94a6;
+  --text:#eaeef6;
+  --brand:#39c07f;
+  --accent:#2f9aff;
+  --border: #1f2630;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+
+.container{width:100%;max-width:1100px;margin:0 auto;padding:0 16px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+.site-header{position:sticky;top:0;background:#0b0d10e6;backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--border);z-index:10}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;gap:12px;align-items:center}
+.brand-logo{font-size:28px}
+h1{font-size:20px;margin:0}
+.tagline{margin:0;color:var(--muted);font-size:12px}
+nav a{margin-left:18px;color:#cfd7e6}
+nav a:hover{color:#fff}
+
+.hero{background:linear-gradient(135deg,#0a4c2f,#0b0d10 60%)}
+.hero-inner{padding:68px 0 52px 0;text-align:center}
+.hero h2{font-size:32px;margin:0 0 8px 0}
+.hero p{margin:0 0 20px 0;color:#d3d9e7}
+.cta{display:inline-block;background:var(--brand);color:#07110b;padding:12px 18px;border-radius:12px;font-weight:700}
+.cta:hover{filter:brightness(1.1)}
+
+.section-head{display:flex;align-items:center;justify-content:space-between;margin:28px 0 12px 0}
+.section-head h3{margin:0;font-size:22px}
+.filters{display:flex;gap:10px}
+.filters input, .filters select{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:10px;padding:10px 12px}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.grid{grid-template-columns:1fr}}
+
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.car-card{display:flex;flex-direction:column}
+.car-media{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0a0d12}
+.car-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+.car-card:hover .car-media img{transform:scale(1.04)}
+.badge{position:absolute;left:10px;top:10px;background:#0b0d10cc;border:1px solid var(--border);color:#e8f8ef;padding:6px 10px;border-radius:999px;font-size:12px}
+.car-body{padding:12px}
+.car-title{display:flex;align-items:baseline;gap:8px;justify-content:space-between}
+.price{font-weight:800}
+.meta{font-size:13px;color:#cfe2d6;margin-top:4px}
+.actions{display:flex;gap:10px;margin-top:10px}
+.btn{background:var(--brand);color:#07110b;border:0;padding:10px 12px;border-radius:10px;font-weight:700;cursor:pointer}
+.btn.secondary{background:#1b222c;color:#cfe2d6;border:1px solid var(--border)}
+.btn:disabled{opacity:.6;cursor:not-allowed}
+
+.empty{text-align:center;color:var(--muted);padding:18px}
+
+.contact-section .card{padding:16px}
+.form-row{display:flex;gap:12px}
+.field{flex:1;display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
+input,textarea,select{background:#0d1218;border:1px solid var(--border);border-radius:12px;padding:10px 12px;color:#eaf1ff}
+input:focus,textarea:focus,select:focus{outline:2px solid #2f9aff55}
+.status{min-height:22px;color:#95ffd2}
+
+.map-embed{margin-top:10px;aspect-ratio:16/9;border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.map-embed iframe{border:0;width:100%;height:100%}
+
+.site-footer{border-top:1px solid var(--border);margin-top:30px}
+.site-footer .container{padding:18px 0;color:#a6b0c0;text-align:center}
+.admin-link{color:#8fb7ff}
